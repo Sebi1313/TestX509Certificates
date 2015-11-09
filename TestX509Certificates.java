@@ -245,7 +245,8 @@ public class TestX509Certificates {
         // client credentials
         KeyStore keyStore = null;
 
-        keyStore = KeyStore.getInstance("PKCS12", "BC");
+        // keyStore = KeyStore.getInstance("PKCS12", "BC");
+        keyStore = KeyStore.getInstance("PKCS12");
         keyStore.load(null, null);
         keyStore.setKeyEntry("client", endCredential.getPrivateKey(), "clientPassword".toCharArray(),
                 new Certificate[]{endCredential.getCertificate(), interCredential.getCertificate(), rootCredential.getCertificate()});
